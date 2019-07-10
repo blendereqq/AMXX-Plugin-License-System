@@ -1,15 +1,18 @@
 <?php 
-error_reporting(0);
+//error_reporting(0);
+
+$file = 'licenses.txt';
 $licentiecode = $_GET['licen'];
-$txtbestand = file_get_contents('licenses.txt'); 
-if (isset($_GET['licen'])) {
-		if(!stristr($txtbestand, $licentiecode)){
-			exit('false');
-				}   
-			exit('true');
-} else {
-	exit('false');
+
+
+$licenfileget = file_get_contents($file);
+$pattern = preg_quote($licentiecode, '/');
+$pattern = "/^.*$pattern.*\$/m";
+
+if(preg_match_all($pattern, $licenfileget)){
+   exit('true');
 }
-
-
- ?>
+else{
+   exit('false');
+}
+?>
