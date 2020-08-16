@@ -2,7 +2,8 @@
 $title = 'Main';
 include 'master/nav.php';
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.php");
+	echo '<script>window.location.replace("login.php");</script>';
+  // header("location: login.php");
     exit;
 }
 $result       = mysqli_query($conn, "SELECT starttime FROM information");

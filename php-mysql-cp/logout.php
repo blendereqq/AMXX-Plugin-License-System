@@ -9,6 +9,6 @@ $login = 0;
 session_destroy();
  
 // Redirect to login page
-header("location: login.php");
+echo '<script>window.location.replace("login.php");</script>';
 exit;
 ?>

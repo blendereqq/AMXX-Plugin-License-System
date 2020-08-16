@@ -7,7 +7,6 @@ $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 $status = $row['status'];
 ?>
-<html lang="pl">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<?php if(isset($title)){

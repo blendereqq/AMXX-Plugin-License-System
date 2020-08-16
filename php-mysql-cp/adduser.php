@@ -2,8 +2,9 @@
 $title ='Add User';
 include 'master/nav.php';
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+	echo '<script>window.location.replace("login.php");</script>';
+  // header("location: login.php");
     exit;
 }
 // Include config file
@@ -85,7 +86,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: usercp.php");
+				echo '<script>window.location.replace("usercp.php");</script>';
+              //  header("location: usercp.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }

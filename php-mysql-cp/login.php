@@ -4,7 +4,8 @@ include 'master/nav.php';
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 {
-    header("location: index.php");
+	echo '<script>window.location.replace("index.php");</script>';
+  //  header("location: index.php");
     exit;
 }
 
@@ -64,7 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
-                            header("location: index.php");
+							echo "<script> window.location.href = 'index.php' </script>";
+                        //    header("location: index.php");
                         }
                         else
                         {
@@ -93,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 }
 ?>
         <h2>Login</h2>
-        <p>To log in please fill in the fields.</p>
+        <p>Aby sie zalogować wypełnij pola.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Login</label>
@@ -101,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
+                <label>Hasło</label>
                 <input type="password" name="password" class="form-control">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>

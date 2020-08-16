@@ -2,9 +2,9 @@
 $title ='User CP';
 include 'master/nav.php';
 
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-{
-    header("location: login.php");
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+	echo '<script>window.location.replace("login.php");</script>';
+  // header("location: login.php");
     exit;
 }
 if ($_SESSION["id"] !== 1)
