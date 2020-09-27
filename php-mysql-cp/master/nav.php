@@ -22,7 +22,8 @@ $status = $row['status'];
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap-alert.js"></script>
 	<script src="js/bootstrap-button.js"></script>
-	<script src="js/jquery.js"></script>
+	<!---<script src="js/jquery.js"></script>---->
+	 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 <body>
  <div class="navbar navbar-fixed-top ">
